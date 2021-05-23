@@ -8,8 +8,18 @@
 import SwiftUI
 
 struct PopularMoviesView: View {
+    
+    let models = 6
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        ScrollView(.vertical, showsIndicators: false, content: {
+            CellUIView()
+            CellUIView()
+            CellUIView()
+        })
+        
+        
     }
 }
 

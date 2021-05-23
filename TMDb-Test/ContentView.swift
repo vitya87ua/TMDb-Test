@@ -58,9 +58,6 @@ struct ContentView: View {
                             }
                         }
                     }
-
-                    
-
                 }, label: {
                     Text("Sign In")
                         .frame(width: 210, height: 50, alignment: .center)
