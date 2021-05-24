@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct ServerResponce: Codable {
     let success: Bool?
@@ -27,7 +28,8 @@ class ApiCaller {
     private let baseUrlAuth =       "https://api.themoviedb.org/3/authentication/token/new?api_key="
     private let singInUrl =         "https://api.themoviedb.org/3/authentication/token/validate_with_login?api_key="
     private let popularMoviesUrl =  "https://api.themoviedb.org/3/movie/popular?api_key=56af4d7d6e0da24d3fe208f8a04b854b&language=en-US&page=1"
-
+    private let baseImageUrl =       "https://image.tmdb.org/t/p/w500"
+    
     private let apiKey = "56af4d7d6e0da24d3fe208f8a04b854b"
     
     
@@ -37,7 +39,7 @@ class ApiCaller {
         var request = URLRequest(url: URL(string: baseUrlAuth + apiKey)!)
         
         URLSession.shared.dataTask(with: request) { data, responce, error in
-//            print("data: \(data), error \(error)")
+            //            print("data: \(data), error \(error)")
             
             let json = try! JSONDecoder().decode(ServerResponce.self, from: data!)
             
@@ -55,7 +57,7 @@ class ApiCaller {
         request.httpMethod = "POST"
         request.httpBody = body
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-
+        
         
         URLSession.shared.dataTask(with: request) { data, responce, error in
             print("data: \(data), error \(error)")
@@ -63,7 +65,7 @@ class ApiCaller {
             let json = try! JSONDecoder().decode(ServerResponce.self, from: data!)
             
             completion(json.success!)
-                        
+            
         }.resume()
         
     }
@@ -74,16 +76,36 @@ class ApiCaller {
         var request = URLRequest(url: URL(string: popularMoviesUrl)!)
         
         URLSession.shared.dataTask(with: request) { data, responce, error in
-//            print("data: \(data), error \(error)")
+            //            print("data: \(data), error \(error)")
             
             let json = try! JSONDecoder().decode(PopularMoviesResponceModel.self, from: data!)
             
-            completion(json)
+            DispatchQueue.main.async {
+                completion(json)
+            }
             
         }.resume()
     }
     
     
+    //    func getImage(imageUrl: String) -> UIImage {
+    //
+    ////        let url = URL(string: baseImageUrl + imageUrl)!
+    //        let url = URL(string: "https://image.tmdb.org/t/p/w500/1UCOF11QCw8kcqvce8LKOO6pimh.jpg")!
+    //
+    //
+    //        URLSession.shared.dataTask(with: url) { data, responce, error in
+    //
+    //        }.resume()
+    //    }
+    
+    func getImage(imageUrl: String) -> UIImage {
+        let url = URL(string: "https://image.tmdb.org/t/p/w500" + imageUrl)!
+        
+        let data = try! Data(contentsOf: url)
+        
+        return UIImage(data: data)!
+    }
     
 }
 

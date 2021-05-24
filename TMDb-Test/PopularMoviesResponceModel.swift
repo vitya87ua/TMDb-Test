@@ -9,27 +9,54 @@ import Foundation
 
 // MARK: - PopularMoviesResponceModel
 struct PopularMoviesResponceModel: Codable {
-    let page: Int?
+    let page: Int
     let results: [Movie]
-    let totalPages: Int?
-    let totalResults: Int?
+    let total_pages: Int
+    let total_results: Int
 }
 
 
 // MARK: - Result
 struct Movie: Codable {
-    let adult: Bool?
-    let backdropPath: String?
-    let genreIDS: [Int]?
-    let id: Int?
-    let originalLanguage: String?
-    let originalTitle: String?
-    let overview: String?
-    let popularity: Double?
-    let posterPath: String?
-    let releaseDate: String?
-    let title: String?
-    let video: Bool?
-    let voteAverage: Double?
-    let voteCount: Int?
+    let adult: Bool
+    let backdrop_path: String
+    let genre_ids: [Int]
+    let id: Int
+    let original_language: String
+    let original_title: String
+    let overview: String
+    let popularity: Double
+    let poster_path: String
+    let release_date: String
+    let title: String
+    let video: Bool
+    let vote_average: Double
+    let vote_count: Int
 }
+
+//// MARK: - PopularMoviesResponceModel
+//struct PopularMoviesResponceModel: Codable {
+//    let page: Int?
+//    let results: [Movie]
+//    let totalPages: Int?
+//    let totalResults: Int?
+//}
+//
+//
+//// MARK: - Result
+//struct Movie: Codable {
+//    let adult: Bool?
+//    let backdrop_path: String?
+//    let genre_ids: [Int]?
+//    let id: Int?
+//    let original_language: String?
+//    let original_title: String?
+//    let overview: String?
+//    let popularity: Double?
+//    let poster_path: String?
+//    let release_date: String?
+//    let title: String?
+//    let video: Bool?
+//    let vote_average: Double?
+//    let vote_count: Int?
+//}
