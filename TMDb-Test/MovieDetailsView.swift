@@ -11,36 +11,26 @@ struct MovieDetailsView: View {
     
     let movieId: Int
     
-    //    init(movieId: Int) {
-    //        self.movieId = movieId
-    //
-    //
-    //    }
-    
     @State private var model: MovieDetailModel?
     @State private var img: UIImage?
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false, content: {
-            ZStack {
-                Image(uiImage: (img ?? UIImage(named: "2"))!)
-                    .resizable()
-                    .scaledToFit()
-                
-                VStack {
-                    Spacer()
-                    
-                    HStack {
-                        Text(String(model?.title ?? "none"))
-                            .foregroundColor(.white)
-                            .font(.title)
-                            .fontWeight(.bold)
-                            .padding()
-                        
-                        Spacer()
-                    }
-                }
-            }
+            
+            Image(uiImage: (img ?? UIImage(named: "2"))!)
+                .resizable()
+                .scaledToFit()
+                .overlay(
+                    Text(String(model?.title ?? "Title"))
+                        .foregroundColor(.white)
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .truncationMode(.tail)
+                        .lineLimit(2)
+                        .minimumScaleFactor(0.8)
+                        .padding()
+                    , alignment: .bottomLeading)
+            
             
             HStack {
                 VStack(alignment: .leading, spacing: 10, content: {

@@ -32,7 +32,13 @@ struct PopularMoviesView: View {
                                 Image(uiImage: ApiCaller.share.getImage(imageUrl: item.poster_path))
                                     .resizable()
                                     .scaledToFit()
-                                    .cornerRadius(15)
+                                    .overlay(
+                                        Rectangle()
+                                            .foregroundColor(.black)
+                                            .opacity(0.5)
+                                            .frame(height: 40)
+                                        
+                                        , alignment: .bottom)
                                 
                                 HStack {
                                     VStack {
@@ -49,6 +55,8 @@ struct PopularMoviesView: View {
                                     Spacer()
                                 }
                             }
+                            .clipShape(RoundedRectangle(cornerRadius: 15))
+                            
                         })
                 }
             })
