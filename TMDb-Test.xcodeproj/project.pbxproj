@@ -14,9 +14,8 @@
 		C93BBA1E265A57F700CE9580 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93BBA1D265A57F700CE9580 /* APICaller.swift */; };
 		C93BBA20265A5B4F00CE9580 /* PopularMoviesResponceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93BBA1F265A5B4F00CE9580 /* PopularMoviesResponceModel.swift */; };
 		C93BBA22265A622300CE9580 /* PopularMoviesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93BBA21265A622300CE9580 /* PopularMoviesView.swift */; };
-		C93BBA24265A72B300CE9580 /* CellUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93BBA23265A72B300CE9580 /* CellUIView.swift */; };
-		C93BBA26265A84B200CE9580 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93BBA25265A84B200CE9580 /* Extension.swift */; };
 		C98F1C82265C002D002219CB /* MovieDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F1C81265C002D002219CB /* MovieDetailsView.swift */; };
+		C98F1C84265C092B002219CB /* MovieDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F1C83265C092B002219CB /* MovieDetailModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,9 +28,8 @@
 		C93BBA1D265A57F700CE9580 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		C93BBA1F265A5B4F00CE9580 /* PopularMoviesResponceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviesResponceModel.swift; sourceTree = "<group>"; };
 		C93BBA21265A622300CE9580 /* PopularMoviesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviesView.swift; sourceTree = "<group>"; };
-		C93BBA23265A72B300CE9580 /* CellUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellUIView.swift; sourceTree = "<group>"; };
-		C93BBA25265A84B200CE9580 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		C98F1C81265C002D002219CB /* MovieDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsView.swift; sourceTree = "<group>"; };
+		C98F1C83265C092B002219CB /* MovieDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,13 +63,11 @@
 			isa = PBXGroup;
 			children = (
 				C93BBA0E265A4D6600CE9580 /* TMDb_TestApp.swift */,
+				C97101B5265D1929001369CD /* Models */,
 				C93BBA10265A4D6600CE9580 /* ContentView.swift */,
-				C93BBA21265A622300CE9580 /* PopularMoviesView.swift */,
-				C93BBA23265A72B300CE9580 /* CellUIView.swift */,
 				C93BBA1D265A57F700CE9580 /* APICaller.swift */,
-				C93BBA1F265A5B4F00CE9580 /* PopularMoviesResponceModel.swift */,
+				C93BBA21265A622300CE9580 /* PopularMoviesView.swift */,
 				C98F1C81265C002D002219CB /* MovieDetailsView.swift */,
-				C93BBA25265A84B200CE9580 /* Extension.swift */,
 				C93BBA12265A4D6A00CE9580 /* Assets.xcassets */,
 				C93BBA17265A4D6A00CE9580 /* Info.plist */,
 				C93BBA14265A4D6A00CE9580 /* Preview Content */,
@@ -85,6 +81,15 @@
 				C93BBA15265A4D6A00CE9580 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C97101B5265D1929001369CD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C98F1C83265C092B002219CB /* MovieDetailModel.swift */,
+				C93BBA1F265A5B4F00CE9580 /* PopularMoviesResponceModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,9 +161,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C93BBA24265A72B300CE9580 /* CellUIView.swift in Sources */,
+				C98F1C84265C092B002219CB /* MovieDetailModel.swift in Sources */,
 				C93BBA11265A4D6600CE9580 /* ContentView.swift in Sources */,
-				C93BBA26265A84B200CE9580 /* Extension.swift in Sources */,
 				C93BBA1E265A57F700CE9580 /* APICaller.swift in Sources */,
 				C93BBA22265A622300CE9580 /* PopularMoviesView.swift in Sources */,
 				C98F1C82265C002D002219CB /* MovieDetailsView.swift in Sources */,

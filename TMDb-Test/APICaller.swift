@@ -30,6 +30,8 @@ class ApiCaller {
     private let popularMoviesUrl =  "https://api.themoviedb.org/3/movie/popular?api_key=56af4d7d6e0da24d3fe208f8a04b854b&language=en-US&page=1"
     private let baseImageUrl =       "https://image.tmdb.org/t/p/w500"
     
+    private let movieDetailUrl =       "https://api.themoviedb.org/3/movie/"
+    
     private let apiKey = "56af4d7d6e0da24d3fe208f8a04b854b"
     
     
@@ -47,6 +49,7 @@ class ApiCaller {
             
         }.resume()
     }
+    
     
     
     // Create Session With Login
@@ -88,16 +91,23 @@ class ApiCaller {
     }
     
     
-    //    func getImage(imageUrl: String) -> UIImage {
-    //
-    ////        let url = URL(string: baseImageUrl + imageUrl)!
-    //        let url = URL(string: "https://image.tmdb.org/t/p/w500/1UCOF11QCw8kcqvce8LKOO6pimh.jpg")!
-    //
-    //
-    //        URLSession.shared.dataTask(with: url) { data, responce, error in
-    //
-    //        }.resume()
-    //    }
+    func getMoviesFor(id: Int, completion: @escaping (MovieDetailModel) -> Void) {
+        
+        let url = URL(string: movieDetailUrl + "\(id)" + "?api_key=" + apiKey + "&language=en-US")!
+                
+        URLSession.shared.dataTask(with: url) { data, responce, error in
+            //            print("data: \(data), error \(error)")
+            
+            let json = try! JSONDecoder().decode(MovieDetailModel.self, from: data!)
+
+            DispatchQueue.main.async {
+                completion(json)
+            }
+            
+        }.resume()
+    }
+
+    
     
     func getImage(imageUrl: String) -> UIImage {
         let url = URL(string: "https://image.tmdb.org/t/p/w500" + imageUrl)!

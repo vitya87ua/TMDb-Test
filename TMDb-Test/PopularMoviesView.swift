@@ -26,7 +26,7 @@ struct PopularMoviesView: View {
             LazyVGrid(columns: layout, content: {
                 ForEach(models, id: \.id) { item in
                     NavigationLink(
-                        destination: Text(String(item.id)),
+                        destination: MovieDetailsView(movieId: item.id),
                         label: {
                             ZStack {
                                 Image(uiImage: ApiCaller.share.getImage(imageUrl: item.poster_path))
